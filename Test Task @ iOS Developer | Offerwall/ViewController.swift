@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var nextButton: UIButton!
@@ -39,6 +39,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
                 self.textView.text = self.objects[self.currentTrendIndex].contents
             } else {
                 let url = URL(string: self.objects[self.currentTrendIndex].url!)!
+//                let url = URL(string: "https://www.google.com/doodles/")!
                 print(url)
                 self.showWebView(url)
             }
@@ -49,6 +50,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         super.viewDidLoad()
         nextButton.layer.cornerRadius = 8
         webView.isHidden = true
+        webView.navigationDelegate = self
 
         spinner.startAnimating()
         downloadFirstObject { (object, response, error) in
@@ -228,5 +230,23 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         }
         
     }
+}
+//MARK: - WKNavigationDelegate
+extension ViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        if trendings.count != objects.count {
+            spinner.startAnimating()
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        spinner.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        spinner.stopAnimating()
+
+    }
+
 }
 
