@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		649132EF23CB0E3A00F6DABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649132EE23CB0E3A00F6DABA /* AppDelegate.swift */; };
-		649132F123CB0E3A00F6DABA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649132F023CB0E3A00F6DABA /* SceneDelegate.swift */; };
 		649132F323CB0E3A00F6DABA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649132F223CB0E3A00F6DABA /* ViewController.swift */; };
 		649132F623CB0E3A00F6DABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 649132F423CB0E3A00F6DABA /* Main.storyboard */; };
 		649132F823CB0E4000F6DABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649132F723CB0E4000F6DABA /* Assets.xcassets */; };
 		649132FB23CB0E4000F6DABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 649132F923CB0E4000F6DABA /* LaunchScreen.storyboard */; };
+		6491330323CB335500F6DABA /* TrendingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6491330223CB335500F6DABA /* TrendingResponse.swift */; };
+		6491330523CB344800F6DABA /* ObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6491330423CB344800F6DABA /* ObjectResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		649132EB23CB0E3A00F6DABA /* Test Task @ iOS Developer | Offerwall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test Task @ iOS Developer | Offerwall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		649132EE23CB0E3A00F6DABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		649132F023CB0E3A00F6DABA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		649132F223CB0E3A00F6DABA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		649132F523CB0E3A00F6DABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		649132F723CB0E4000F6DABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		649132FA23CB0E4000F6DABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		649132FC23CB0E4000F6DABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6491330223CB335500F6DABA /* TrendingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingResponse.swift; sourceTree = "<group>"; };
+		6491330423CB344800F6DABA /* ObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +59,23 @@
 			isa = PBXGroup;
 			children = (
 				649132EE23CB0E3A00F6DABA /* AppDelegate.swift */,
-				649132F023CB0E3A00F6DABA /* SceneDelegate.swift */,
 				649132F223CB0E3A00F6DABA /* ViewController.swift */,
+				6491330623CB358D00F6DABA /* Model */,
 				649132F423CB0E3A00F6DABA /* Main.storyboard */,
 				649132F723CB0E4000F6DABA /* Assets.xcassets */,
 				649132F923CB0E4000F6DABA /* LaunchScreen.storyboard */,
 				649132FC23CB0E4000F6DABA /* Info.plist */,
 			);
 			path = "Test Task @ iOS Developer | Offerwall";
+			sourceTree = "<group>";
+		};
+		6491330623CB358D00F6DABA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6491330223CB335500F6DABA /* TrendingResponse.swift */,
+				6491330423CB344800F6DABA /* ObjectResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6491330323CB335500F6DABA /* TrendingResponse.swift in Sources */,
+				6491330523CB344800F6DABA /* ObjectResponse.swift in Sources */,
 				649132F323CB0E3A00F6DABA /* ViewController.swift in Sources */,
 				649132EF23CB0E3A00F6DABA /* AppDelegate.swift in Sources */,
-				649132F123CB0E3A00F6DABA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +298,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Test Task @ iOS Developer | Offerwall/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,7 +306,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stasshetko.Test-Task---iOS-Developer---Offerwall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Test Task @ iOS Developer | Offerwall/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stasshetko.Test-Task---iOS-Developer---Offerwall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

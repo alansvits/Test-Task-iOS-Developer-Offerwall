@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,63 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Test_Task___iOS_Developer___Offerwall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xH-ls-n2r">
+                                <rect key="frame" x="75" y="584" width="225" height="33"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Далее">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vta-1T-Ac3"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eme-QQ-amm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wwN-0w-n9b">
+                                <rect key="frame" x="70" y="221" width="235" height="225"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wwN-0w-n9b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4ls-hy-pSK"/>
+                            <constraint firstItem="Eme-QQ-amm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="6lW-3y-E4S"/>
+                            <constraint firstItem="wwN-0w-n9b" firstAttribute="width" secondItem="3xH-ls-n2r" secondAttribute="width" multiplier="1.04444" id="ISm-i0-qrd"/>
+                            <constraint firstItem="Eme-QQ-amm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KpV-zx-DRz"/>
+                            <constraint firstItem="3xH-ls-n2r" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="L6P-8Z-Q5t"/>
+                            <constraint firstItem="Eme-QQ-amm" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Qa8-AX-lKO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3xH-ls-n2r" secondAttribute="bottom" constant="50" id="c4P-si-KxI"/>
+                            <constraint firstItem="Eme-QQ-amm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hR9-5F-SvQ"/>
+                            <constraint firstItem="3xH-ls-n2r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nuA-AQ-bd5"/>
+                            <constraint firstItem="wwN-0w-n9b" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="omC-UE-cHS"/>
+                            <constraint firstItem="wwN-0w-n9b" firstAttribute="height" secondItem="3xH-ls-n2r" secondAttribute="width" id="z9h-jm-5g9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="3xH-ls-n2r" id="YR3-wv-ks3"/>
+                        <outlet property="textView" destination="wwN-0w-n9b" id="2o2-Ka-d1D"/>
+                        <outlet property="webView" destination="Eme-QQ-amm" id="N8K-jb-QNv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
